@@ -75,4 +75,10 @@
     <string name="hbm_summary">Make the screen brighter, which may wrong brightness of the CUP area.</string>
     <string name="hbm_failed">Failed to enable High brightness mode!</string>
 
+    <!-- Thermal Profile -->
+    <string name="thermalprofile_title">Thermal profile</string>
+    <string name="thermalprofile_default">Default</string>
+    <string name="thermalprofile_game">Game</string>
+    <string name="thermalprofile_unknown">Unknown</string>
+
 </resources>
