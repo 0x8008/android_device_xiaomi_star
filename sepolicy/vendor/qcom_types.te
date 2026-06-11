@@ -1,0 +1,46 @@
+# Types not declared in this tree (normally from device/qcom/sepolicy_vndr for SM8350)
+# Only types that are USED in other .te files but not declared anywhere accessible.
+
+# Domains
+type vendor_adsprpcd, domain;
+type vendor_cdsprpcd, domain;
+type vendor_sensors, domain;
+type vendor_hal_neuralnetworks_default, domain;
+type vendor_hal_perf_default, domain;
+type vendor_qtelephony, domain;
+type vendor_qti_init_shell, domain;
+type vendor_vppservice, domain;
+type hal_aospa_powershare_default, domain;
+type vendor_hal_soter_qti, domain;
+
+# Sysfs file types
+type vendor_sysfs_audio, sysfs_type, fs_type;
+type vendor_sysfs_battery_supply, sysfs_type, fs_type;
+type vendor_sysfs_fingerprint, sysfs_type, fs_type;
+type vendor_sysfs_graphics, sysfs_type, fs_type;
+type vendor_sysfs_kgsl, sysfs_type, fs_type;
+type vendor_sysfs_spss, sysfs_type, fs_type;
+type vendor_sysfs_usbpd_device, sysfs_type, fs_type;
+type vendor_sysfs_usb_supply, sysfs_type, fs_type;
+
+# Other file types
+type adsprpcd_file, file_type;
+type firmware_file, file_type;
+type vendor_nfc_vendor_data_file, file_type;
+type vendor_persist_sensors_file, file_type;
+type vendor_wifi_vendor_data_file, file_type;
+
+# Device types
+type vendor_bsg_device, dev_type;
+type vendor_qdsp_device, dev_type;
+type vendor_uefi_block_device, dev_type;
+type vendor_xdsp_device, dev_type;
+
+# Property types
+type vendor_adsprpc_prop, property_type;
+type vendor_audio_prop, property_type;
+type vendor_sys_video_prop, property_type;
+
+# HWService types
+type vendor_hal_perf_hwservice, hwservice_manager_type;
+type vendor_hal_soter_hwservice, hwservice_manager_type;

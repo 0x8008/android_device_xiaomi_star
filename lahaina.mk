@@ -37,6 +37,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 #BOARD_SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
 PRODUCT_SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
 
+# UFFD GC - kernel 5.4 does not support MREMAP_DONTUNMAP (requires 5.7+)
+PRODUCT_ENABLE_UFFD_GC := false
+
 # Audio
 TARGET_LOOP_COMPRESS_READ := true
 
