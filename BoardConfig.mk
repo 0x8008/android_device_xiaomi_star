@@ -86,10 +86,10 @@ DEVICE_MANIFEST_FILE := \
     $(DEVICE_PATH)/configs/vintf/manifest.xml
 
 # Include proprietary files
--include vendor/xiaomi/star/BoardConfigVendor.mk
+-include $(wildcard vendor/xiaomi/star/BoardConfigVendor.mk)
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_star
+$(call soong_config_set,libinit,vendor_init_lib,//$(DEVICE_PATH):libinit_star)
 TARGET_RECOVERY_DEVICE_MODULES := libinit_star
 
 # Kernel
@@ -189,7 +189,7 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/xc5000.ko
 
 # Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
+#TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 
 # NFC
 TARGET_USES_NQ_NFC := true
@@ -306,7 +306,7 @@ CONFIG_IEEE80211AX := true
 CONFIG_IEEE80211AC := true
 
 # Inherit proprietary blobs
-include vendor/xiaomi/star/BoardConfigVendor.mk
+-include vendor/xiaomi/star/BoardConfigVendor.mk
 
 # Inherit from proprietary files for miuicamera
 -include vendor/xiaomi/star-miuicamera/products/board.mk

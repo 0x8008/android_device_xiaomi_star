@@ -27,14 +27,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Inherit proprietary targets
-$(call inherit-product, vendor/xiaomi/star/star-vendor.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/star/star-vendor.mk)
 
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # API
-BOARD_API_LEVEL := 30
-BOARD_SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
+#BOARD_API_LEVEL := 30
+#BOARD_SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
 PRODUCT_SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
 
 # Audio
@@ -348,6 +348,8 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom-caf/wlan \
+    hardware/qcom-caf/wlan/qcwcn \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
@@ -378,7 +380,7 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 # Vibrator
-$(call inherit-product, hardware/xiaomi/aidl/vibrator/vibrator-vendor-product.mk)
+$(call inherit-product-if-exists, hardware/xiaomi/aidl/vibrator/vibrator-vendor-product.mk)
 
 # VNDK
 # vndservicemanager has been removed from API30 devices (aosp/1235751)
