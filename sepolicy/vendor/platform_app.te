@@ -1,1 +1,2 @@
-allow platform_app vendor_sys_video_prop:file { read };
+# platform_app access to vendor video prop - use get_prop macro
+get_prop(platform_app, vendor_sys_video_prop)

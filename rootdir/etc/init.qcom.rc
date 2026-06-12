@@ -292,6 +292,7 @@ service vendor.atfwd /vendor/bin/ATFWD-daemon
 
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
+    user system
     group system
     disabled
     oneshot

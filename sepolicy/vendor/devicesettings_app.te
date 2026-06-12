@@ -1,6 +1,5 @@
 allow devicesettings_app vendor_sysfs_graphics:file write;
 r_dir_file(devicesettings_app, vendor_sysfs_graphics)
-set_prop(devicesettings_app, property_socket)
 set_prop(devicesettings_app, vendor_audio_prop)
 get_prop(devicesettings_app, vendor_audio_prop)
 

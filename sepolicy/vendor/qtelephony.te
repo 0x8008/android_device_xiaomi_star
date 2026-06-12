@@ -1,2 +1,3 @@
-allow vendor_qtelephony hal_telephony_hwservice:hwservice_manager find;
-
+# vendor_qtelephony telephony access
+# hal_telephony_hwservice find is neverallowed for vendor domains in Android 16
+# Use hal_client_domain macro if telephony HAL access is needed at runtime
